@@ -1,10 +1,10 @@
----KeyMaps---
+---Simple KeyMaps For Neovim---
 
-
------it is vim commandss----
+-----it is vim commands----
 
 vim.api.nvim_set_keymap('n', '<leader>x', ':x<CR>', { noremap = true, silent = true }) -- Save the file and exit
-vim.api.nvim_set_keymap('n', '<leader>q', ':q<CR>', { noremap = true, silent = true }) -- Quit the file
+vim.api.nvim_set_keymap('n', '<leader>q', ':q!<CR>', { noremap = true, silent = true }) --force Quit the file
 
 ----it opens explorer---
-vim.api.nvim_set_keymap('n', '<leader>e', ':Explore<CR>', { noremap = true, silent = true }) -- it open the file explorer 
+vim.api.nvim_set_keymap('n', '<leader>e', ':NvimTreeToggle<CR>', { noremap = true, silent = true }) -- it open the file explorer 
+
