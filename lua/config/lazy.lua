@@ -1,3 +1,4 @@
+-- config/lazy.lua
 -- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
@@ -15,35 +16,25 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
--- Setup lazy.nvim
+--------------------------------------
+--------------EDITOR_RELATED----------
+--------------------------------------
 require("lazy").setup({
-
 {
-  "nvim-tree/nvim-tree.lua",
-  version = "*",
-  lazy = false,
-  dependencies = {
-    "nvim-tree/nvim-web-devicons",
-  },
-  config = function()
-    require("nvim-tree").setup {
-  sort = {
-    sorter = "case_sensitive",
-  },
-  view = {
-    width = 30,
-    side = "right",
-  },
-  renderer = {
-    group_empty = true,
-  },
-  filters = {
-    dotfiles = true,
-  },
-    }
-  end,
+    'nvim-lualine/lualine.nvim',
+    dependencies = {'kyazdani42/nvim-web-devicons'},
+    config = function()
+      require('config.plugins.nvim-lualine')
+    end
 },
- 
-{"navarasu/onedark.nvim",},
-{"oxfist/night-owl.nvim"},
+--------------------------------------
+--------------EXPLORER----------------
+--------------------------------------
+{
+  'stevearc/oil.nvim',
+  config = function()
+    require('config.plugins.nvim-oil')
+  end
+},
+
 })
