@@ -37,4 +37,16 @@ require("lazy").setup({
   end
 },
 
+-----colour schems------
+
+{ "catppuccin/nvim", 
+
+config = function() 
+    require('config.plugins.nvim-catppuccin')
+    end
+
+},
+
+
+
 })

@@ -21,3 +21,5 @@ vim.keymap.set("n", "<leader>e", function()
           vim.cmd("Oil")
         end
       end, { desc = "Toggle oil file explorer" })
+      
+vim.cmd [[colorscheme catppuccin]]
