@@ -1,3 +1,18 @@
+
 -- Line numbers
+vim.g.clipboard = {
+  name = "win32yank",
+  copy = {
+    ["+"] = "win32yank.exe -i --crlf",
+    ["*"] = "win32yank.exe -i --crlf",
+  },
+  paste = {
+    ["+"] = "win32yank.exe -o --lf",
+    ["*"] = "win32yank.exe -o --lf",
+  },
+  cache_enabled = 0,
+}
+vim.o.clipboard = "unnamedplus"
+
 vim.o.number = true
 vim.o.relativenumber = true
